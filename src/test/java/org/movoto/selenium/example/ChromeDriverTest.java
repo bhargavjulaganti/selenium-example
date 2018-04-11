@@ -40,17 +40,16 @@ public class ChromeDriverTest {
     public void testTitle() throws IOException {
 	    
 	 System.out.println("test title method" );    
-      /*   String exePath = "webdriver/chromedriver";
-		
-        System.setProperty("webdriver.chrome.driver", exePath);
-        
-		driver = new ChromeDriver();
-		
-        driver.get("http://www.google.com");
-              
-        String title = driver.getTitle();
-        
-        System.out.println("Title of the page is : " + title); */
+      
+	    System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+
+ driver = new ChromeDriver();
+  driver.get("http://www.google.com/xhtml");
+  Thread.sleep(5000);  // Let the user actually see something!
+  WebElement searchBox = driver.findElement(By.name("q"));
+  searchBox.sendKeys("ChromeDriver");
+  searchBox.submit();
+  
     }
 
     @After
