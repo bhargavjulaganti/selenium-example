@@ -35,7 +35,7 @@ public class ChromeDriverTest {
                 "webdriver.chrome.driver",
                 "webdriver/chromedriver");
 
-        testUrl = "https://leftstick.github.io/";
+        testUrl = "https://www.google.com/";
 
         // Create a new instance of the Chrome driver
         // Notice that the remainder of the code relies on the interface,
@@ -54,23 +54,9 @@ public class ChromeDriverTest {
     @Test
     public void testTitle() throws IOException {
 
-        // Find elements by attribute lang="READ_MORE_BTN"
-        List<WebElement> elements = driver
-                .findElements(By.cssSelector("[lang=\"READ_MORE_BTN\"]"));
-
-        //Click the selected button
-        elements.get(0).click();
-
-
-        assertTrue("The page title should be chagned as expected",
-                (new WebDriverWait(driver, 5))
-                        .until(new ExpectedCondition<Boolean>() {
-                            public Boolean apply(WebDriver d) {
-                                return d.getTitle().equals("我眼中软件工程人员该有的常识");
-                            }
-                        })
-        );
-
+        String title = driver.getTitle();
+        
+        System.out.println("Title of the page is : " + title);
     }
 
     @After
