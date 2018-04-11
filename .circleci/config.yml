@@ -7,6 +7,15 @@ jobs:
     steps:
       - checkout
       - run: echo "A first hello"
+      - run:
+          name: Download Selenium
+          command: |
+            curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
+      - run:
+          name: Start Selenium
+          command: |
+            java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
+          background: true
       #- run: mvn dependency::go-offline #make sure all dependencies are in local before going offline
       - run: mvn clean test
       - run: ls
