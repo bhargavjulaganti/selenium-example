@@ -30,7 +30,7 @@ public class FirefoxTest {
     @Before
     public void prepare() {
 
-        testUrl = "https://leftstick.github.io/";
+        testUrl = "https://www.google.com";
 
         System.setProperty("webdriver.gecko.driver","webdriver/geckodriver");
 
@@ -48,22 +48,9 @@ public class FirefoxTest {
     @Test
     public void testTitle() throws IOException {
 
-        // Find elements by attribute lang="READ_MORE_BTN"
-        List<WebElement> elements = driver
-                .findElements(By.cssSelector("[lang=\"READ_MORE_BTN\"]"));
-
-        //Click the selected button
-        elements.get(0).click();
-
-
-        assertTrue("The page title should be chagned as expected",
-                (new WebDriverWait(driver, 3))
-                        .until(new ExpectedCondition<Boolean>() {
-                            public Boolean apply(WebDriver d) {
-                                return d.getTitle().equals("我眼中软件工程人员该有的常识");
-                            }
-                        })
-        );
+        String title = driver.getTitle();
+        
+        System.out.println("Title of the page is : " + title);
     }
 
     @After
