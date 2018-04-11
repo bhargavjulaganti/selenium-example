@@ -8,8 +8,8 @@ jobs:
       - checkout
       - run: echo "A first hello"
       #- run: mvn dependency::go-offline #make sure all dependencies are in local before going offline
-      - run: mvn build
-      - run: ls
+      - run: mvn clean test
+      #- run: ls
      # - run: mvn clean test
 workflows:
   version: 2
