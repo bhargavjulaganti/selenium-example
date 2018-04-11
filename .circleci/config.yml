@@ -10,6 +10,8 @@ jobs:
       #- run: mvn dependency::go-offline #make sure all dependencies are in local before going offline
       - run: mvn clean test
       - run: ls
+      - run: cd webdriver
+      - run: ls
      # - run: mvn clean test
 workflows:
   version: 2
