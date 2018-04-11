@@ -30,30 +30,22 @@ public class ChromeDriverTest {
 
     @Before
     public void prepare() {
-        //setup chromedriver
-        System.setProperty(
-                "webdriver.chrome.driver",
-                "webdriver/chromedriver");
-
-        testUrl = "https://www.google.com/";
-
-        // Create a new instance of the Chrome driver
-        // Notice that the remainder of the code relies on the interface,
-        // not the implementation.
-        driver = new ChromeDriver();
-
-        //maximize window
-        driver.manage().window().maximize();
-
-        // And now use this to visit myBlog
-        // Alternatively the same thing can be done like this
-        // driver.navigate().to(testUrl);
-        driver.get(testUrl);
+       
+        
+        System.out.println("before method " );
+        
     }
 
     @Test
     public void testTitle() throws IOException {
-
+         String exePath = "webdriver/chromedriver";
+		
+        System.setProperty("webdriver.chrome.driver", exePath);
+        
+		driver = new ChromeDriver();
+		
+        driver.get("http://www.google.com");
+              
         String title = driver.getTitle();
         
         System.out.println("Title of the page is : " + title);
