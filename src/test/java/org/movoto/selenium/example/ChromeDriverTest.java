@@ -38,7 +38,9 @@ public class ChromeDriverTest {
 
     @Test
     public void testTitle() throws IOException {
-         String exePath = "webdriver/chromedriver";
+	    
+	 System.out.println("test title method" );    
+      /*   String exePath = "webdriver/chromedriver";
 		
         System.setProperty("webdriver.chrome.driver", exePath);
         
@@ -48,12 +50,14 @@ public class ChromeDriverTest {
               
         String title = driver.getTitle();
         
-        System.out.println("Title of the page is : " + title);
+        System.out.println("Title of the page is : " + title); */
     }
 
     @After
     public void teardown() throws IOException {
-        driver.quit();
+       
+	    System.out.println("tear down method" );  
+	   // driver.quit();
     }
 
 }
