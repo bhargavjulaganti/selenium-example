@@ -42,11 +42,11 @@ public class ChromeDriverTest {
 	    
 	 System.out.println("test title method" );    
       
-	//   System.setProperty("webdriver.chrome.driver", "webdriver/chromedriver.exe");
+	//  System.setProperty("webdriver.chrome.driver", "webdriver/chromedriver.exe");
 
-       //  driver = new ChromeDriver();
+         driver = new ChromeDriver();
 	    
-	   driver = new FirefoxDriver();
+	//   driver = new FirefoxDriver();
   
 	   // driver.get("http://www.google.com/xhtml");
  
