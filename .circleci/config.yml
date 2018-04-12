@@ -22,7 +22,7 @@ jobs:
       - run: ls      
       - run: unzip chromedriver_win32 
       - run: ls -lrt
-      - run: chmod +x webdriver/chromedriver 
+      - run: chmod +x chromedriver 
       - run: ls -lrt
       - run: mv chromedriver.exe webdriver/      
       - run: ls
