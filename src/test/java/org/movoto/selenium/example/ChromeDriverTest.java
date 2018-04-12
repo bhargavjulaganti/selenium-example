@@ -42,7 +42,7 @@ public class ChromeDriverTest {
 	    
 	 System.out.println("test title method" );    
       
-	 System.setProperty("webdriver.chrome.driver", "webdriver/chromedriver.exe");
+	 System.setProperty("webdriver.chrome.driver", "webdriver/chromedriver");
 
          driver = new ChromeDriver();
 	    
