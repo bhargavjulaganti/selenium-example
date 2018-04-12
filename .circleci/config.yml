@@ -16,12 +16,19 @@ jobs:
           command: |
             java -jar selenium-server-standalone-3.5.3.jar -log selenium.log
           background: true
-      #- run: mvn dependency::go-offline #make sure all dependencies are in local before going offline
+      - run:
+          name: Download Chromedriver
+          command: |
+            curl http://chromedriver.storage.googleapis.com/2.23/chromedriver_win32.zip | gzip -dc > chromedriver
+       - run:
+          name: Start Chromedriver
+          command: |
+            java -jar selenium-server-standalone.jar -trustAllSSLCertificates -Dwebdriver.chrome.driver=chromedriver':
+          background: true      
+      - run: ls      
+      - run: mvn dependency::go-offline #make sure all dependencies are in local before going offline
       - run: mvn clean test
-      - run: ls
-      - run: cd webdriver/
-      - run: ls
-     # - run: mvn clean test
+     
       - store_test_results:
           path: target/surefire-reports
 workflows:
