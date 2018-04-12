@@ -50,7 +50,7 @@ public class ChromeDriverTest {
   
 	  driver.get("http://www.google.com");
 	    
-	    System.out.println("title of the page *******************************" + driver.getTitle() );  
+	 //   System.out.println("title of the page *******************************" + driver.getTitle() );  
  
   
     }
