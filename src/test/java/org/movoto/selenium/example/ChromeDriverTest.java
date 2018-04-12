@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.firefoxdriver
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.MarionetteDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -41,11 +42,11 @@ public class ChromeDriverTest {
 	    
 	 System.out.println("test title method" );    
       
-	   System.setProperty("webdriver.chrome.driver", "webdriver/chromedriver.exe");
+	//   System.setProperty("webdriver.chrome.driver", "webdriver/chromedriver.exe");
 
-         driver = new ChromeDriver();
+       //  driver = new ChromeDriver();
 	    
-	 //   driver = new FirefoxDriver();
+	   driver = new FirefoxDriver();
   
 	   // driver.get("http://www.google.com/xhtml");
  
