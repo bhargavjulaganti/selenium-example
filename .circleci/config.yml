@@ -24,7 +24,7 @@ jobs:
       - run: ls -lrt
       - run: chmod +x chromedriver 
       - run: ls -lrt
-      - run: mv chromedriver.exe webdriver/      
+      - run: mv chromedriver webdriver/      
       - run: ls
       - run: pwd
       - run: mvn dependency::go-offline #make sure all dependencies are in local before going offline
