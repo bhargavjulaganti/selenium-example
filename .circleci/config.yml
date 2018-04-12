@@ -19,8 +19,7 @@ jobs:
       - run:
           name: Download Chromedriver
           command: |
-             curl -O http://chromedriver.storage.googleapis.com/2.23/chromedriver_win32.zip | gzip -dc > chromedriver
-       
+             curl -O http://chromedriver.storage.googleapis.com/2.23/chromedriver_win32.zip        
        - run:
           name: Start Chromedriver
           command: |
