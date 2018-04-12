@@ -22,8 +22,8 @@ jobs:
       - run: ls      
       - run: unzip chromedriver_win32 
       - run: ls
-      - run: mv chromedriver.exe webdriver/
       - run: chmod +x webdriver/chromedriver
+      - run: mv chromedriver.exe webdriver/      
       - run: ls
       - run: mvn dependency::go-offline #make sure all dependencies are in local before going offline
       - run: mvn clean test
