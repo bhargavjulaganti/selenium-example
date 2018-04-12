@@ -18,7 +18,7 @@ jobs:
           background: true
           
       - run: curl -O http://chromedriver.storage.googleapis.com/2.23/chromedriver_linux64.zip      
-      - run: apt-get install libgconf-2-4      
+      - run: sudo apt-get install libgconf-2-4      
       - run: ls      
       - run: unzip chromedriver_linux64
       - run: ls -lrt
