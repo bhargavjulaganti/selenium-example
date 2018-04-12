@@ -48,7 +48,9 @@ public class ChromeDriverTest {
 	    
 	//   driver = new FirefoxDriver();
   
-	   // driver.get("http://www.google.com/xhtml");
+	  driver.get("http://www.google.com");
+	    
+	    System.out.println("title of the page *******************************" + driver.getTitle() );  
  
   
     }
