@@ -2,7 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:8-jdk
+    #  - image: circleci/openjdk:8-jdk
+      - image: circleci/selenium/standalone-chrome:3.1.0
 
     steps:
       - checkout
@@ -17,11 +18,11 @@ jobs:
             java -jar selenium-server-standalone-3.5.3.jar -log selenium.log
           background: true
       
-      - run: sudo apt-get install libgconf-2-4 
+    #  - run: sudo apt-get install libgconf-2-4 
       
-      - run: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-      - run: sudo dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
-      
+   #   - run: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+   #   - run: sudo dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
+   #   
 
       
       - run: curl -O http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip           
