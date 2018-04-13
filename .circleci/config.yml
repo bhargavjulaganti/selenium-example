@@ -25,15 +25,15 @@ jobs:
    #   
 
       
-      - run: curl -O http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip           
-      - run: ls      
-      - run: unzip chromedriver_linux64
-      - run: ls -lrt
-      - run: chmod +x chromedriver 
-      - run: ls -lrt
-      - run: mv chromedriver webdriver/      
-      - run: ls
-      - run: pwd
+   #   - run: curl -O http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip           
+   #   - run: ls      
+   #   - run: unzip chromedriver_linux64
+   #   - run: ls -lrt
+   #   - run: chmod +x chromedriver 
+   #   - run: ls -lrt
+   #   - run: mv chromedriver webdriver/      
+   #   - run: ls
+   #   - run: pwd
       - run: mvn dependency::go-offline #make sure all dependencies are in local before going offline
       - run: mvn clean test
      
