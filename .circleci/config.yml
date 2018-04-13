@@ -18,6 +18,12 @@ jobs:
           background: true
       - run: sudo apt-get install libgconf-2-4 
       
+      - run: sudo apt-get update
+      - run: sudo apt-get install libpango1.0-0
+      - run: sudo apt-get install firefox
+      - run: sudo ln -sf /usr/lib/firefox/firefox /usr/bin/firefox
+
+      
       - run: curl -O http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip           
       - run: ls      
       - run: unzip chromedriver_linux64
