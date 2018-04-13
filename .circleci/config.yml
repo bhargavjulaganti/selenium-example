@@ -16,12 +16,12 @@ jobs:
           command: |
             java -jar selenium-server-standalone-3.5.3.jar -log selenium.log
           background: true
+      - run: sudo apt-get install libgconf-2-4 
       - run: curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
       - run: sudo dpkg -i google-chrome.deb
       - run: sudo sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome
       - run: rm google-chrome.deb
-      - run: curl -O http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip      
-      - run: sudo apt-get install libgconf-2-4      
+      - run: curl -O http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip           
       - run: ls      
       - run: unzip chromedriver_linux64
       - run: ls -lrt
