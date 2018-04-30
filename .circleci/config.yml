@@ -6,7 +6,7 @@ jobs:
       
 
     steps:
-      - checkout
+      - run: checkout
       - run: echo "A first hello"
       - run:
           name: Download Selenium
