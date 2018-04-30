@@ -32,8 +32,8 @@ jobs:
        - run: mv chromedriver webdriver/      
        - run: ls
        - run: pwd
-      - run: mvn dependency::go-offline #make sure all dependencies are in local before going offline
-      - run: mvn clean test
+       - run: mvn dependency::go-offline #make sure all dependencies are in local before going offline
+       - run: mvn clean test
      
       - store_test_results:
           path: target/surefire-reports
