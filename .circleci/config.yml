@@ -2,11 +2,10 @@ version: 2
 jobs:
   build:
     docker:
-       - image: circleci/openjdk:8-jdk
-      
+      - image: circleci/openjdk:8-jdk
 
     steps:
-      - run: checkout
+      - checkout
       - run: echo "A first hello"
       - run:
           name: Download Selenium
@@ -16,24 +15,20 @@ jobs:
           name: Start Selenium
           command: |
             java -jar selenium-server-standalone-3.5.3.jar -log selenium.log
-            background: true
-      
-      - run: sudo apt-get install libgconf-2-4 
-      
-      
-
-       - run: mvn clean
-       - run: curl -O http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip           
-       - run: ls      
-       - run: unzip chromedriver_linux64
-       - run: ls -lrt
-       - run: chmod +x chromedriver 
-       - run: ls -lrt
-       - run: mv chromedriver webdriver/      
-       - run: ls
-       - run: pwd
-       - run: mvn dependency::go-offline #make sure all dependencies are in local before going offline
-       - run: mvn clean test
+          background: true
+          
+      - run: curl -O http://chromedriver.storage.googleapis.com/2.23/chromedriver_linux64.zip      
+      - run: sudo apt-get install libgconf-2-4      
+      - run: ls      
+      - run: unzip chromedriver_linux64
+      - run: ls -lrt
+      - run: chmod +x chromedriver 
+      - run: ls -lrt
+      - run: mv chromedriver webdriver/      
+      - run: ls
+      - run: pwd
+      - run: mvn dependency::go-offline #make sure all dependencies are in local before going offline
+      - run: mvn clean test
      
       - store_test_results:
           path: target/surefire-reports
